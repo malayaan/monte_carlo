@@ -1,33 +1,14 @@
-% Paramètres spécifiques pour la distribution
-a = 6.5; % Exemple de valeur pour a
-c = -17;   % Borne inférieure de l'intervalle
-d = -13;   % Borne supérieure de l'intervalle
-n = 10000; % Nombre de tirages
+% Définir les paramètres
+alpha = 3;
+theta = 2;
+mu = -13;
+b = 2;
 
-% Initialisation du vecteur pour stocker les tirages
-samples = zeros(n, 1);
+% Nombre de simulations
+N = 10000;
 
-% Génération des tirages
-for i = 1:n
-    samples(i) = simulate_affine_density(a, c, d);
-end
+% Appel de la fonction pour estimer p
+p_estimate = monte_carlo_estimator(alpha, theta, mu, b, N);
 
-% Tracé de l'histogramme des tirages
-histogram(samples, 50, 'Normalization', 'pdf');
-hold on;
-
-% Calcul de b pour la superposition de la densité théorique
-b = (1 - 0.5*a*(d^2 - c^2)) / (d - c);
-
-% Tracé de la densité théorique
-x_values = linspace(c, d, 1000);
-y_values = a*x_values + b;
-plot(x_values, y_values, 'r-', 'LineWidth', 2);
-
-% Configuration du graphique
-title('Comparaison de l''histogramme des tirages et la densité théorique');
-xlabel('Valeur');
-ylabel('Densité');
-legend('Tirages simulés', 'Densité théorique');
-
-hold off;
+% Afficher l'estimation de p
+disp(['Estimation de Monte-Carlo de P(X + Y > 0) : ', num2str(p_estimate)]);
