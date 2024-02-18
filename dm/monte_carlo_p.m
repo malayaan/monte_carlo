@@ -1,4 +1,4 @@
-function [p_estimate, sigma2, N, CI] = estimate_p_variance_confidence(alpha, theta, mu, b, delta, alpha_conf)
+function [p_estimate, sigma2, N, CI] = monte_carlo_p(alpha, theta, mu, b, delta, alpha_conf)
     % alpha, theta : paramètres de la distribution gamma pour X
     % mu, b : paramètres de la distribution mixte pour Y
     % delta : demi-largeur de l'intervalle de confiance souhaité
@@ -9,10 +9,10 @@ function [p_estimate, sigma2, N, CI] = estimate_p_variance_confidence(alpha, the
     p_bar = 0;
     n = 1;
     while ((2 * n) < (c^2 * S2 / delta^2) || S2 == 0)
-        x_sample = simulate_gamma_x(alpha, theta);
-        y_sample = simulate_mixed_y(mu, b);
-        x_sample_prime = simulate_gamma_x(alpha, theta);
-        y_sample_prime = simulate_mixed_y(mu, b);
+        x_sample = simulate_X(alpha, theta);
+        y_sample = simulate_Y(mu, b);
+        x_sample_prime = simulate_X(alpha, theta);
+        y_sample_prime = simulate_Y(mu, b);
         
         Y = (x_sample + y_sample > 0);
         Y_prime = (x_sample_prime + y_sample_prime > 0);

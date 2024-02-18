@@ -7,7 +7,7 @@ delta = 0.01; % Demi-largeur de l'intervalle de confiance
 alpha_conf = 0.05; % Niveau de confiance (95% de confiance si alpha_conf = 0.05)
 
 % Appel de la fonction
-[p_estimate, sigma2, N, CI] = estimate_p_variance_confidence(alpha, theta, mu, b, delta, alpha_conf);
+[p_estimate, sigma2, N, CI] = monte_carlo_p(alpha, theta, mu, b, delta, alpha_conf);
 
 % Affichage des résultats
 fprintf('Estimation de Monte-Carlo de P(X + Y > 0) : %f\n', p_estimate);

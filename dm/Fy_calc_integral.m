@@ -1,6 +1,5 @@
-function F = calc_integral_2(mu, b, y)
+function F = Fy_calc_integral(mu, b, y)
     % calc_F Calcule la valeur de la primitive F en fonction de mu, b et y
-
     if y < mu - 2*b
         F = 0;
     elseif y < mu

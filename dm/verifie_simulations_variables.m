@@ -5,7 +5,7 @@ mu = -13;
 b = 2;
 
 % Nombre de simulations
-N = 10000;
+N = 250000;
 
 % Initialiser les vecteurs de stockage pour les échantillons
 x_samples = zeros(1, N);
@@ -13,8 +13,7 @@ y_samples = zeros(1, N);
 
 % Générer des échantillons en boucle
 for i = 1:N
-    x_samples(i) = simulate_gamma_x(alpha, theta);
-    y_samples(i) = simulate_mixed_y(mu, b);
+    [x_samples(i), y_samples(i)] = simulate_pair(mu, b, alpha, theta);
 end
 
 % Histogramme pour X

@@ -3,10 +3,10 @@ alpha = 3;
 theta = 2;
 mu = -13;
 b = 2;
-N = 2336*2; % Nombre total de simulations, choisi pour l'exemple
+N = 2336; % Nombre total de simulations, choisi pour l'exemple
 
 % Appel de la fonction monte_carlo_antithetic
-[p_estimate, variance] = monte_carlo_antithetic(alpha, theta, mu, b, N);
+[p_estimate, variance] = monte_carlo_p_antithetic(alpha, theta, mu, b, N);
 
 % Calcul de l'intervalle de confiance
 alpha_conf = 0.05; % Niveau de confiance (95% de confiance si alpha_conf = 0.05)

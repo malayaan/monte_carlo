@@ -1,4 +1,4 @@
-function y = inverse_integral_f(mu, b, I_target)
+function y = Fy_inverse_integral(mu, b, I_target)
     % Vérifier dans quel segment I_target se trouve
     if I_target < 0 || I_target > 1
         error('I_target doit être entre 0 et 1.');
