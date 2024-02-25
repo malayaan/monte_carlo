@@ -1,3 +1,5 @@
+% Vérifier graphiquement la fonction simulate_pair en comparant la distribution de chaque variable avec les densités théoriques.
+
 % Définir les paramètres
 alpha = 3;
 theta = 2;
@@ -5,7 +7,7 @@ mu = -13;
 b = 2;
 
 % Nombre de simulations
-N = 250000;
+N = 70000;
 
 % Initialiser les vecteurs de stockage pour les échantillons
 x_samples = zeros(1, N);

@@ -3,7 +3,7 @@ theta = 2;
 x = 10*rand() % Générer x aléatoirement
 
 % Générer x_anti en utilisant la fonction définie
-x_anti = generateAntitheticX(x, alpha, theta)
+x_anti = Fx_generate_Antithetic(x, alpha, theta)
 
 % Calculer la médiane de la distribution Gamma
 medianGamma = theta * gammaincinv(0.5, alpha);

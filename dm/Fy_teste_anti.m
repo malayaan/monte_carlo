@@ -3,10 +3,10 @@ mu = -13;
 b = 2;
 
 % Générer y aléatoirement en utilisant la fonction simulate_mixed_y
-y = simulate_mixed_y(mu, b);
+y = simulate_Y(mu, b);
 
 % Générer y_anti en utilisant la fonction définie
-y_anti = generateAntitheticMixedY(y, mu, b);
+y_anti = Fy_generate_Antithetic(y, mu, b);
 
 % Définir une gamme de valeurs pour le tracé de la densité, s'arrêtant à mu-2b
 t = linspace(mu-2*b, mu+10*b, 1000);
